@@ -63,11 +63,21 @@ SELECT SUM(price) FROM flights WHERE arrive_city = 'RDU';
 7. The average price for all flights in the database.
 SELECT  AVG(price) FROM flights;
 9. The average price for all flights arriving to Raleigh-Durham.
-10. The departure city and number of flights departing from each city.
-11. The count of airlines in the database.
-12. The count of flights in the database.
-13. The flight number, departure city, arrival city, price, and airline name of each flight. Do not return the airline ID number.
-14. The airline name, flight number, and price of each flight on the Delta airline. (Assume that you do not know the ID number of the Delta airline. In a larger database, you would be expected to memorize ID numbers).
+ SELECT  AVG(price) FROM flights WHERE arrive_city = 'RDU';
+11. The departure city and number of flights departing from each city.
+SELECT depart_city, COUNT(id) FROM flights GROUP BY flights.id;
+13. The count of airlines in the database.
+SELECT COUNT(airline_name) FROM airlines;
+15. The count of flights in the database.
+SELECT COUNT(id) FROM flights;
+17. The flight number, departure city, arrival city, price, and airline name of each flight. Do not return the airline ID number.
+18. 
+SELECT flight_number,depart_city, arrive_city, price, airlines.airline_name FROM flights JOIN airlines ON flights.id = airlines.id;
+19. The airline name, flight number, and price of each flight on the Delta airline. (Assume that you do not know the ID number of the Delta airline. In a larger database, you would be expected to memorize ID numbers).
+20. 
+SELECT airlines.airline_name, flight_number, price
+FROM flights JOIN airlines ON flights.id = airlines.id
+WHERE airline_name = 'Delta';
 
 ## Submission
 
