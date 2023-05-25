@@ -10,27 +10,37 @@
 
 [Citation for ERD](https://circle.visual-paradigm.com/hospital/)
 1. Use the Doctors Office ERD above to answer the following questions:
-    1. How many patients can each doctor have?
-    1. How many doctors can each patient have?
-    1. How would you describe the relationship between patients and tests? Be sure to use either one-to-one, one-to-many, or many-to-many in your answer.
-    1. What are the foreign keys in this diagram?
-    1. What is the primary key for the Tests table.
-    1. What query would return the number of doctors who have a specialization in "pediatrics"?
+    1. How many patients can each doctor have? 
+    Many
+    3. How many doctors can each patient have?
+    One
+    5. How would you describe the relationship between patients and tests? Be sure to use either one-to-one, one-to-many, or many-to-many in your answer.
+    one to many
+    7. What are the foreign keys in this diagram?
+    Doctor_id, patient_id
+    9. What is the primary key for the Tests table.
+    id
+    11. What query would return the number of doctors who have a specialization in "pediatrics"?
+    SELECT * FROM doctors WHERE specialization = 'pediatrics';
 
 <br>
 
 2. What does a join table do? Why would we need one?
-3. What is a question that the following query helps answer?
+Joins data collected from 2 different tables
+4. What is a question that the following query helps answer?
+Can you find the total of artists and group them by hometown
 ```SQL
 SELECT hometown, COUNT(name) FROM artists
 GROUP BY hometown;
 ```
 
 4. I'm trying to write a query to find the average age of all patients, but it's not working. How would you modify this query to get it to work as expected?
+SELECT *, AVG(age) FROM patients
 ```SQL
 SELECT age FROM AVERAGE(patients);
 ```
 5. How would you describe the difference between a `LEFT JOIN` and an `INNER JOIN`
+Left join brings all data from the left table you called in your query and all matching data and inner join is a normal join and it pulls matching data from both tables.
  
 ## Exercise (10 Points Possible)
 
